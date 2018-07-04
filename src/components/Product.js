@@ -188,14 +188,18 @@ export default class Product extends Component {
             <WebView
               source={{
                 uri:
-                  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.303503780502!2d-51.1717852844917!3d-30.028149481888242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9519778528b2d4cf%3A0xda6714393b7b5c0a!2sAv.+Dr.+Nilo+Pe%C3%A7anha+-+Bela+Vista%2C+Porto+Alegre+-+RS%2C+90470-000!5e0!3m2!1sen!2sbr!4v1530737212751'
+                  'https://www.openstreetmap.org/export/embed.html?bbox=-51.19998514652252%2C-30.046870218489925%2C-51.19644463062287%2C-30.044871160124274&amp;layer=mapnik'
               }}
             />
           </View>
           <View>
-            <Button block primary><Text>Agendar</Text></Button>
+            <Button block primary>
+              <Text>Agendar</Text>
+            </Button>
             <Text> </Text>
-            <Button block primary><Text>Compartilhar</Text></Button>
+            <Button block primary>
+              <Text>Compartilhar</Text>
+            </Button>
           </View>
         </Content>
       </Container>
