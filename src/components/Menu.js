@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   Container,
   Content,
@@ -37,22 +37,32 @@ const routes = [
     icon: 'user'
   }
 ];
-export default class SideBar extends React.Component {
+export default class SideBar extends Component {
   render() {
-    return <Container>
+    return (
+      <Container style={{ backgroundColor: '#FFFFFF' }}>
         <Header>
           <Body>
             <Title>Foxter</Title>
           </Body>
         </Header>
         <Content>
-          <List dataArray={routes} renderRow={data => {
-              return <ListItem button onPress={() => this.props.navigation.navigate(data.route)}>
+          <List
+            dataArray={routes}
+            renderRow={data => {
+              return (
+                <ListItem
+                  button
+                  onPress={() => this.props.navigation.navigate(data.route)}
+                >
                   <Icon type="FontAwesome" name={data.icon} />
                   <Text> {data.name}</Text>
-                </ListItem>;
-            }} />
+                </ListItem>
+              );
+            }}
+          />
         </Content>
-      </Container>;
+      </Container>
+    );
   }
 }
