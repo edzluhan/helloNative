@@ -1,4 +1,4 @@
-import React, { Component, View } from 'react';
+import React, { Component } from 'react';
 import {
   Container,
   Content,

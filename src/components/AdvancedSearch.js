@@ -18,6 +18,8 @@ import {
   Content
 } from 'native-base';
 
+import Layout from './Layout';
+
 export default class AdvancedSearch extends Component {
   constructor(props) {
     super(props);
@@ -35,7 +37,7 @@ export default class AdvancedSearch extends Component {
 
   render() {
     return (
-      <Container>
+      <Layout navigation={this.props.navigation}>
         <Content>
           <Form>
             <Item floatingLabel>
@@ -300,7 +302,7 @@ export default class AdvancedSearch extends Component {
             </Button>
           </Form>
         </Content>
-      </Container>
+      </Layout>
     );
   }
 }

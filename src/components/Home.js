@@ -1,8 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import {
-  Header,
-  Title,
-  Content,
   Button,
   Left,
   Right,
@@ -15,108 +12,97 @@ import {
   ListItem,
   Container,
   Text,
-  Card,
-  Drawer
+  Card
 } from 'native-base';
 
-import Menu from './Menu';
+import Layout from './Layout';
 
-class Home extends Component {
+export default class Home extends Component {
   render() {
-    closeDrawer = () => {
-      this.drawer._root.close();
-    };
-    openDrawer = () => {
-      this.drawer._root.open();
-    };
-
     return (
-      <Drawer
-        ref={ref => {
-          this.drawer = ref;
-        }}
-        content={<Menu navigator={this.navigator} />}
-        onClose={() => closeDrawer()}
-      >
+      <Layout navigation={this.props.navigation}>
+        <Card>
+          <Form>
+            <Item>
+              <Input placeholder="Busca por endereço" />
+              <Icon
+                active
+                name="search"
+                onPress={() => console.warn('search')}
+              />
+            </Item>
+            <Item>
+              <Left>
+                <Button transparent>
+                  <Icon type="FontAwesome" name="map-marker" />
+                </Button>
+              </Left>
+              <Right>
+                <Button
+                  transparent
+                  onPress={() =>
+                    this.props.navigation.navigate('AdvancedSearch')
+                  }
+                >
+                  <Icon type="FontAwesome" name="filter" />
+                </Button>
+              </Right>
+            </Item>
+          </Form>
+        </Card>
         <Container>
-          <Header>
-            <Left>
-              <Button transparent onPress={() => openDrawer()}>
-                <Icon name="menu" />
-              </Button>
-            </Left>
-            <Body>
-              <Title>Foxter</Title>
-            </Body>
-            <Right />
-          </Header>
-          <Content>
-            <Card>
-              <Form>
-                <Item>
-                  <Input placeholder="Busca por endereço" />
-                  <Icon
-                    active
-                    name="search"
-                    onPress={() => console.warn('search')}
-                  />
-                </Item>
-                <Item>
-                  <Left>
-                    <Button transparent>
-                      <Icon type="FontAwesome" name="map-marker" />
-                    </Button>
-                  </Left>
-                  <Right>
-                    <Button transparent>
-                      <Icon type="FontAwesome" name="filter" />
-                    </Button>
-                  </Right>
-                </Item>
-              </Form>
-            </Card>
-            <Container>
-              <List>
-                <ListItem iconLeft>
-                  <Icon
-                    name="warning"
-                    type="FontAwesome"
-                    style={{ fontSize: 24, color: 'red' }}
-                  />
-                  <Body>
-                    <Text>Sankhadeep</Text>
-                    <Text note>Its time to build a difference . .</Text>
-                  </Body>
-                </ListItem>
-                <ListItem iconLeft>
-                  <Icon
-                    name="exclamation"
-                    type="FontAwesome"
-                    style={{ fontSize: 24, color: '#F57F17' }}
-                  />
-                  <Body>
-                    <Text>Sankhadeep</Text>
-                    <Text note>Its time to build a difference . .</Text>
-                  </Body>
-                </ListItem>
-                <ListItem iconLeft>
-                  <Icon
-                    name="inbox"
-                    type="FontAwesome"
-                    style={{ fontSize: 24, color: 'green' }}
-                  />
-                  <Body>
-                    <Text>Sankhadeep</Text>
-                    <Text note>Its time to build a difference . .</Text>
-                  </Body>
-                </ListItem>
-              </List>
-            </Container>
-          </Content>
+          <List>
+            <ListItem iconLeft>
+              <Icon
+                name="warning"
+                type="FontAwesome"
+                style={{ fontSize: 24, color: 'red' }}
+              />
+              <Body>
+                <Text>Sankhadeep</Text>
+                <Text note>Its time to build a difference . .</Text>
+              </Body>
+            </ListItem>
+            <ListItem iconLeft>
+              <Icon
+                name="exclamation"
+                type="FontAwesome"
+                style={{ fontSize: 24, color: '#F57F17' }}
+              />
+              <Body>
+                <Text>Contato</Text>
+                <Text note>Início - 09:00 - 05/07/2018</Text>
+                <Text note>Fim - 09:00 - 05/07/2018</Text>
+              </Body>
+            </ListItem>
+            <ListItem iconLeft>
+              <Icon
+                name="inbox"
+                type="FontAwesome"
+                style={{ fontSize: 24, color: 'green' }}
+              />
+              <Body>
+                <Text>Sankhadeep</Text>
+                <Text note>Its time to build a difference . .</Text>
+              </Body>
+            </ListItem>
+            <ListItem
+              iconLeft
+              onPress={() => this.props.navigation.navigate('Task')}
+            >
+              <Icon
+                name="calendar"
+                type="FontAwesome"
+                style={{ fontSize: 24, color: 'green' }}
+              />
+              <Body>
+                <Text>Solicitação de Visita</Text>
+                <Text note>16:00 - 29/08/2018</Text>
+              </Body>
+            </ListItem>
+          </List>
         </Container>
-      </Drawer>
+      </Layout>
     );
   }
 }
-
-export default Home;

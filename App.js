@@ -5,6 +5,9 @@ import Menu from './src/components/Menu';
 import AdvancedSearch from './src/components/AdvancedSearch';
 import Results from './src/components/Results';
 import Product from './src/components/Product';
+import ScheduleVisit from './src/components/ScheduleVisit';
+import Task from './src/components/Task';
+import VisitSolicitation from './src/components/VisitSolicitation';
 
 export default createStackNavigator(
   {
@@ -13,11 +16,14 @@ export default createStackNavigator(
     Menu,
     AdvancedSearch,
     Results,
-    Product
+    Product,
+    ScheduleVisit,
+    Task,
+    VisitSolicitation
   },
   {
     title: 'Foxter App',
     headerMode: 'none',
-    initialRouteName: 'Product'
+    initialRouteName: 'VisitSolicitation'
   }
 );
