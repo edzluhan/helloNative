@@ -14,6 +14,8 @@ import {
   Icon
 } from 'native-base';
 
+import Layout from './Layout';
+
 export default class ScheduleVisit extends Component {
   constructor(props) {
     super(props);
@@ -31,6 +33,7 @@ export default class ScheduleVisit extends Component {
 
   render() {
     return (
+      <Layout navigation={this.props.navigation}>
       <Container>
         <Content padder>
           <Form>
@@ -115,6 +118,7 @@ export default class ScheduleVisit extends Component {
           </Form>
         </Content>
       </Container>
+      </Layout>
     );
   }
 }
