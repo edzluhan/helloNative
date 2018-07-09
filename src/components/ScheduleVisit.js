@@ -112,7 +112,7 @@ export default class ScheduleVisit extends Component {
               </Picker>
             </Item>
 
-            <Button block>
+            <Button block onPress={() => this.props.navigation.navigate('Product', {schedule: true})}>
               <Text>Solicitar Visita</Text>
             </Button>
           </Form>

@@ -24,15 +24,6 @@ export default class Layout extends Component {
     this.drawer._root.open();
   };
 
-  componentDidMount(){
-    Toast.show({
-      text: 'Toast',
-      type: 'success',
-      buttonText: 'Sai!',
-      duration: 0
-    });
-  };
-
   render() {
     return (
       <Root>
@@ -46,12 +37,14 @@ export default class Layout extends Component {
           <Container>
             <Header>
               <Left>
-                <Button
-                  transparent
-                  onPress={() => this.props.navigation.goBack()}
-                >
-                  <Icon name="arrow-back" />
-                </Button>
+                {this.props.navigation.state.routeName === 'Home' ? null : (
+                  <Button
+                    transparent
+                    onPress={() => this.props.navigation.goBack()}
+                  >
+                    <Icon name="arrow-back" />
+                  </Button>
+                )}
               </Left>
               <Body>
                 <Title>Foxter</Title>

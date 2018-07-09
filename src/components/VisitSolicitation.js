@@ -17,7 +17,7 @@ import {
   Picker,
   DatePicker,
   Icon,
-  Textarea
+  Toast
 } from 'native-base';
 
 import Layout from './Layout';
@@ -129,6 +129,7 @@ export default class VisitSolicitation extends Component {
               block
               onPress={() => {
                 this.setModal1Visible(!this.state.modal1Visible);
+                Toast.show({text: 'Proposta de visita enviada!'});
               }}
             >
               <Text>Propor</Text>
@@ -159,6 +160,7 @@ export default class VisitSolicitation extends Component {
               danger
               onPress={() => {
                 this.setModal2Visible(!this.state.modal2Visible);
+                Toast.show({ text: 'Visita cancelada!' });
               }}
             >
               <Text>Cancelar</Text>
@@ -181,12 +183,14 @@ export default class VisitSolicitation extends Component {
             <Button
               success
               style={{ flexGrow: 1, justifyContent: 'center', margin: 4 }}
-              onPress={ () => Alert.alert(
-                'Agendamento confirmado',
-                'Texto',
-                [{text: 'OK'}, {text: 'Cancelar'}],
-                { cancelable: true }
-              )}
+              onPress={() =>
+                Alert.alert(
+                  'Agendamento confirmado',
+                  null,
+                  [{ text: 'OK' }],
+                  { cancelable: false }
+                )
+              }
             >
               <Text>Agendar</Text>
             </Button>

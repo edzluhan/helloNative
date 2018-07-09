@@ -46,7 +46,7 @@ export default class AdvancedSearch extends Component {
               <Icon
                 active
                 name="search"
-                onPress={() => console.warn('search')}
+                onPress={() => this.props.navigation.navigate('Results')}
               />
             </Item>
             <List>
@@ -296,8 +296,13 @@ export default class AdvancedSearch extends Component {
                 <Text>Video</Text>
               </Button>
             </Item>
-            <Item><Text> </Text></Item>
-            <Button block>
+            <Item>
+              <Text> </Text>
+            </Item>
+            <Button
+              block
+              onPress={() => this.props.navigation.navigate('Results')}
+            >
               <Text>Buscar</Text>
             </Button>
           </Form>

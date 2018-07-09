@@ -24,6 +24,6 @@ export default createStackNavigator(
   {
     title: 'Foxter App',
     headerMode: 'none',
-    initialRouteName: 'VisitSolicitation'
+    initialRouteName: 'Home'
   }
 );

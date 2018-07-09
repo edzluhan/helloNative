@@ -17,7 +17,7 @@ const routes = [
     icon: 'home'
   },
   {
-    route: 'Home',
+    route: 'Results',
     name: 'Imóveis',
     icon: 'building'
   },
@@ -32,7 +32,7 @@ const routes = [
     icon: 'calendar'
   },
   {
-    route: 'Home',
+    route: '',
     name: 'Contatos',
     icon: 'user'
   }
